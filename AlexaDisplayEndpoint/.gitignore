@@ -130,3 +130,4 @@ dist
 .pnp.*
 
 google-service-account-key.json
+deploy.zip

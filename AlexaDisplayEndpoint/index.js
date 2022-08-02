@@ -62,7 +62,7 @@ const WeatherIntentHandler = {
     const success = await changeMode("weather");
     const msg = success
       ? "Ok! Já te mostro como está o tempo."
-      : "Um erro ocorrer! Desculpinha";
+      : "Um erro ocorreu! Desculpinha";
     return handlerInput.responseBuilder.speak(msg).getResponse();
   },
 };
@@ -78,7 +78,7 @@ const ClockIntentHandler = {
     const success = await changeMode("clock");
     const msg = success
       ? "Ok! Já te mostro um relógio."
-      : "Um erro ocorrer! Desculpinha";
+      : "Um erro ocorreu! Desculpinha";
     return handlerInput.responseBuilder.speak(msg).getResponse();
   },
 };

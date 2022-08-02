@@ -1,10 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import type {Node} from 'react';
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, Text} from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 
 import DigitalClock from './src/components/clock/DigitalClock';
 import Weather from './src/components/weather/Weather';
+
+const DynamicPage = ({mode}) => {
+  switch (mode) {
+    case 'clock':
+      return <DigitalClock />;
+    case 'weather':
+      return <Weather />;
+    default:
+      return;
+  }
+};
 
 const App: () => Node = () => {
   const [mode, setMode] = useState('clock');
@@ -20,7 +31,7 @@ const App: () => Node = () => {
   return (
     <SafeAreaView style={styles.content}>
       <StatusBar hidden />
-      {mode === 'clock' ? <DigitalClock /> : <Weather />}
+      <DynamicPage mode={mode} />
     </SafeAreaView>
   );
 };
@@ -28,6 +39,7 @@ const App: () => Node = () => {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
+    backgroundColor: '#2e383e',
   },
 });
 

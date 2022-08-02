@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   box: {
     padding: 20,
-    borderRadius: 30,
+    borderRadius: 20,
     backgroundColor: '#484f54',
   },
   time: {

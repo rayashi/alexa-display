@@ -4,6 +4,7 @@
   "description": "Alexa Serverless Template for Node 14.x",
   "main": "index.js",
   "scripts": {
+    "build": "rm -f deploy.zip && zip -r deploy.zip .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
