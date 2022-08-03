@@ -42,7 +42,7 @@ const LaunchRequestHandler = {
     );
   },
   handle(handlerInput) {
-    const speakOutput = "Você gostaria de ver o clima? Ou o relógio?";
+    const speakOutput = "O que você quer ver?";
 
     return handlerInput.responseBuilder
       .speak(speakOutput)
@@ -61,7 +61,7 @@ const WeatherIntentHandler = {
   async handle(handlerInput) {
     const success = await changeMode("weather");
     const msg = success
-      ? "Ok! Já te mostro como está o tempo."
+      ? "Olha como está o tempo aí. Vai colocar uma blusa menino."
       : "Um erro ocorreu! Desculpinha";
     return handlerInput.responseBuilder.speak(msg).getResponse();
   },
@@ -77,7 +77,7 @@ const ClockIntentHandler = {
   async handle(handlerInput) {
     const success = await changeMode("clock");
     const msg = success
-      ? "Ok! Já te mostro um relógio."
+      ? "Tá bom! Olha aí as horas pra você ficar esperto e largar de ser lerdo."
       : "Um erro ocorreu! Desculpinha";
     return handlerInput.responseBuilder.speak(msg).getResponse();
   },
